@@ -20,7 +20,7 @@ const Navbar = () => {
       <div className="max-w-screen-xl mx-auto flex flex-wrap items-center justify-between p-4">
         {/* Logo */}
         <a href="/" className="flex items-center">
-          <img src={img} className="w-24 h-16" alt="Logo" />
+          <img src={img} className=" h-16" alt="Logo" />
         </a>
 
         {/* Desktop Menu */}

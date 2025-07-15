@@ -11,7 +11,7 @@ import img from "../assets/logo.png";
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-t from-black via-[#270E12] to-[#3d1a1d] text-white px-6 py-16">
+    <footer className="bg-gradient-to-t from-[#0E0E0E] via-[#1A1A1A] to-[#0E0E0E] text-white px-6 py-16">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Logo and Description */}
         <div>
@@ -27,9 +27,9 @@ export default function Footer() {
             <input
               type="email"
               placeholder="Enter Your Email"
-              className="flex-1 px-4 py-3 bg-transparent border border-[#9D0A16] rounded-l-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#9D0A16]"
+              className="flex-1 px-4 py-3 bg-transparent border border-blue-500 rounded-l-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
-            <button className="px-6 py-3 bg-[#DC1256] text-white rounded-r-md hover:bg-pink-600 transition-colors font-medium">
+            <button className="px-6 py-3 border border-hover focus:ring-2  bg-blue-600 text-white rounded-r-md hover:bg-blue-800 transition-colors font-medium">
               Subscribe
             </button>
           </div>
@@ -87,19 +87,21 @@ export default function Footer() {
           {/* Social Icons */}
           <div>
             <h3 className="text-xl font-semibold mb-6">Get In Touch</h3>
-            <div className="flex flex-wrap gap-3">
-              {[Twitter, Instagram, Facebook, Send, MessageCircle, Youtube].map(
-                (Icon, index) => (
-                  <a
-                    key={index}
-                    href="#"
-                    className="w-12 h-12 border border-[#9D0A16] rounded-full flex items-center justify-center transition-colors hover:bg-[#DC1256]"
-                  >
-                    <Icon className="w-5 h-5 text-[#9D0A16] group-hover:text-white" />
-                  </a>
-                )
-              )}
-            </div>
+          <div className="flex flex-wrap gap-3">
+  {[Twitter, Instagram, Facebook, Send, MessageCircle, Youtube].map(
+    (Icon, index) => (
+      <a
+        key={index}
+        href="#"
+        className="group w-12 h-12 border border-blue-500 rounded-full flex items-center justify-center transition-transform duration-300 hover:scale-110 hover:bg-blue-500"
+      >
+        <Icon className="w-5 h-5 text-blue-500 transition-colors duration-300 group-hover:text-white" />
+      </a>
+    )
+  )}
+</div>
+
+
           </div>
         </div>
       </div>

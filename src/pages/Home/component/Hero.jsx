@@ -7,7 +7,9 @@ import "swiper/css/pagination";
 
 import banner1 from "../../../assets/banner1-1.webp";
 import banner2 from "../../../assets/marketplace-vid.webp";
-import banner3 from "../../../assets/marketplace-vid.webp";
+import banner3 from "../../../assets/news-1.jpg";
+import banner4 from "../../../assets/news-2.jpg";
+import arrow from "../../../assets/right-arrow.svg";
 
 
 // Slide Data
@@ -33,7 +35,7 @@ const heroSlides = [
     tagline: "FUTURE UTILITY",
     description:
       "Unlock real value with our NFT marketplace and staking options.",
-    image: banner1,
+    image: banner4,
   },
   {
     title: "DAO Governance",
@@ -49,13 +51,13 @@ const heroSlides = [
     tagline: "REAL UTILITY",
     description:
       "Stake your NFTs and earn passive income while supporting the ecosystem.",
-    image: null, // no image
+    image: banner2,
   },
 ];
 
 const Hero = () => {
   return (
- <section className="min-h-screen bg-[#0E0E0E] text-white">
+ <section className="min-h-screen bg-[#0E0E0E] text-white mt-8">
   <Swiper
     modules={[Autoplay, Pagination]}
     autoplay={{ delay: 5000, disableOnInteraction: true }}
@@ -67,15 +69,15 @@ const Hero = () => {
     {heroSlides.map((slide, idx) => (
       <SwiperSlide key={idx}>
         <div className="min-h-screen flex items-center justify-center px-6 py-20">
-          <div className="grid md:grid-cols-2 gap-10 max-w-7xl mx-auto w-full items-center">
+          <div className="grid md:grid-cols-2 gap-10 max-w-7xl mx-auto w-full items-center justify-center">
             {/* Left */}
-            <div className="z-10">
-              <h1 className="text-4xl font-bold">
+            <div className="z-10 order-2 md:order-1 text-center">
+              <h1 className="text-4xl font-bold hover:animate-bounce-once ">
                 {slide.title}
-                <div className="flex items-center text-red-500 text-2xl gap-3 mt-2">
-                  → <span className="text-white">{slide.subtitle}</span>
+                <div className="flex items-center justify-center text-red-500 text-2xl gap-3 mt-2 animate-slide-in-right">
+                  <img src={arrow} alt="" /> <span className="text-white italic">{slide.subtitle}</span>
                 </div>
-                <div className="mt-1">{slide.tagline}</div>
+                <div className="mt-1 animate-slide-in-left">{slide.tagline}</div>
               </h1>
               <p className="text-gray-400 my-6">{slide.description}</p>
               <button className="mt-4 text-white bg-blue-600 hover:bg-blue-700 font-medium rounded-lg text-sm px-4 py-2">
@@ -85,7 +87,7 @@ const Hero = () => {
 
             {/* Right */}
             {slide.image && (
-              <div className="relative z-0">
+              <div className="relative z-0 order-1 md:order-2">
                 <div className="absolute inset-0 blur-2xl rounded-full scale-110 -z-10 " />
                 <img
                   src={slide.image}
